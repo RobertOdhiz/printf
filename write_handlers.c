@@ -64,11 +64,11 @@ int write_number(int is_negative, int ind, char buffer[],
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
 	if (is_negative)
-		extra_ch = '-';
+		extra_ch = 45;
 	else if (flags & F_PLUS)
-		extra_ch = '+';
+		extra_ch = 43;
 	else if (flags & F_SPACE)
-		extra_ch = ' ';
+		extra_ch = 32;
 
 	return (write_num(ind, buffer, flags, width, precision,
 				len, padd, extra_ch));
