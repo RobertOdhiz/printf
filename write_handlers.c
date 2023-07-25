@@ -205,12 +205,13 @@ int write_unsgnd(int is_negative, int ind,
 int write_pointer(char buffer[], int ind, int length,
 	int width, int flags, char padd, char extra_c, int padd_start)
 {
-	int i;
+	int i, j;
 
 	if (width > length)
 	{
-		for (i = 3; i < width - length + 3; i++)
-			buffer[i] = padd;
+		i = 3 + width - length;
+		for (j = 3; j < i; j++)
+			buffer[j] = padd;
 		buffer[i] = '\0';
 		if (flags & F_MINUS && padd == ' ')/* Asign extra char to left of buffer */
 		{
