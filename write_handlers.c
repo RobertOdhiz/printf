@@ -130,7 +130,6 @@ int write_num(int ind, char buffer[],
 	}
 	return (extra_c ? write(1, &buffer[--ind], length)
 			: write(1, &buffer[ind], length));
-
 }
 /**
  * write_unsgnd - Writes an unsigned number
